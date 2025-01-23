@@ -1,4 +1,4 @@
-# CSC-134-C-
+# CSC-134
 
 Prompts for Song:
 Garou the Hero Hunter
