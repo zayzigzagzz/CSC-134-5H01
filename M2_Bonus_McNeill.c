@@ -41,10 +41,12 @@ int main(void)
     SetTargetFPS(60);               // Set desired framerate (frames-per-second)
     //--------------------------------------------------------------------------------------
     //ALL OUR VARIABLES
-    int player_x = 0;
-    int player_y = 0;
-    int speed_x = 1;
-    int speed_y = 1;
+    int player_x = screenWidth / 2;
+    int player_y = screenHeight / 2;
+    int speed = 10; //movement speed
+    
+    int tileSize = 50; // Size of each square in the checkered pattern
+
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
@@ -83,6 +85,34 @@ int main(void)
                 {
                     currentScreen = ENDING;
                 }
+                
+                //movement logic (ensuring only one direction at a time)
+                if (IsKeyDown(KEY_RIGHT))
+                {
+                    player_x += speed;
+                }
+                else if (IsKeyDown(KEY_LEFT))
+                {
+                    player_x -= speed;
+                }
+                else if (IsKeyDown(KEY_UP))
+                {
+                    player_y -= speed;
+                }
+                else if (IsKeyDown(KEY_DOWN))
+                {
+                    player_y += speed;
+                }
+                
+                //player dies if they touch boundary
+                if (player_x < 0 || player_x > screenWidth - 50 || 
+                    player_y < 0 || player_y > screenHeight - 50)
+                {
+                    currentScreen = ENDING;  // **Send player to game over screen**
+                    player_x = screenWidth / 2;
+                    player_y = screenHeight / 2;
+                }
+    
             } break;
             case ENDING:
             {
@@ -123,30 +153,27 @@ int main(void)
                 } break;
                 case GAMEPLAY:
                 {
+                    //checkered background
+                for (int y = 0; y < screenHeight; y += tileSize)
+                {
+                    for (int x = 0; x < screenWidth; x += tileSize)
+                    {
+                        if ((x / tileSize + y / tileSize) % 2 == 0)
+                            DrawRectangle(x, y, tileSize, tileSize, DARKBLUE);
+                        else
+                            DrawRectangle(x, y, tileSize, tileSize, BLUE);
+                    }
+                }
+                    
                     // TODO: Draw GAMEPLAY screen here!
-                    DrawRectangle(0, 0, screenWidth, screenHeight, PINK);
-                    DrawText("SNAKE GAMEPLAY SCREEN", 20, 20, 40, RED);
+                    DrawText("SNAKE GAMEPLAY SCREEN", 20, 20, 40, LIME);
                       
-                    DrawText("PRESS ENTER or TAP to JUMP to ENDING SCREEN", 130, 220, 20, RED);
-                    
-                    DrawRectangle(200, 200, 50, 50, DARKBLUE);
-                    
-                    //update position
-                    player_x = player_x + speed_x;
-                    player_y = player_y + speed_y;
-                    //wrap aroudn
-                    if (player_x > screenWidth || player_x < 0)
-                    {
-                        //player_x = 0; //wrap
-                        speed_x = -speed_x; //bounce off wall
-                    }
-                    if (player_y > screenHeight || player_y < 0)
-                    {
-                        //player_y = 0;
-                        speed_y = -speed_y; //bounce off wall
-                    }
+                    DrawText("PRESS ENTER or TAP to JUMP to ENDING SCREEN", 130, 220, 20, LIME);
+             
                     //draw player
                     DrawRectangle(player_x, player_y, 50, 50, DARKPURPLE);
+                    
+                   
 
                 } break;
                 case ENDING:
