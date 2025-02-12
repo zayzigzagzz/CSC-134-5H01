@@ -112,6 +112,8 @@ int main(void)
                     player_x = screenWidth / 2;
                     player_y = screenHeight / 2;
                 }
+                
+                
     
             } break;
             case ENDING:
@@ -164,6 +166,14 @@ int main(void)
                             DrawRectangle(x, y, tileSize, tileSize, BLUE);
                     }
                 }
+                
+                // Draw the coconut
+                DrawCircle(screenWidth / 2, screenHeight / 2, 100, BROWN); // Coconut body
+                DrawCircle(screenWidth / 2, screenHeight / 2, 90, DARKBROWN); // Inner part of the coconut
+                DrawCircle(screenWidth / 2 - 30, screenHeight / 2 - 30, 10, BLACK); // Coconut eye 1
+                DrawCircle(screenWidth / 2, screenHeight / 2 - 40, 10, BLACK); // Coconut eye 2
+                DrawCircle(screenWidth / 2 + 30, screenHeight / 2 - 30, 10, BLACK); // Coconut eye 3
+                
                     
                     // TODO: Draw GAMEPLAY screen here!
                     DrawText("SNAKE GAMEPLAY SCREEN", 20, 20, 40, LIME);
