@@ -1,6 +1,6 @@
 /*
 CSC-134
-M2HW1 - Silver
+M2HW1 - Gold
 Isaiah McNeill
 2/19/25
 */

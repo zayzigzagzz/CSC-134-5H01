@@ -1,6 +1,6 @@
 /*
 CSC-134
-M2HW1 - Silver
+M2HW1 - Gold
 Isaiah McNeill
 2/19/25
 */
@@ -14,7 +14,8 @@ int main()
 {
     //variables
     string name;
-    int accountNum, balance, deposit, withdrawl;
+    int accountNum;
+    double balance, deposit, withdrawl;
 
     //input
     cout << "Enter your name: ";
@@ -33,13 +34,17 @@ int main()
     cin >> withdrawl;
 
     //calculations
-    int finalBalance = balance + deposit - withdrawl;
+    double finalBalance = balance + deposit - withdrawl;
 
     //output
-    cout << setprecision(2) << fixed << endl;
     cout << name << endl;
-    cout << "Account Number: " << accountNum << endl;
-    cout << "New Balance: $" << finalBalance << endl;
-    
+    cout << "---------------------------------" << endl;
+    cout << setw(20) << "Account Number:\t " << setw(6) << accountNum << endl;
+    cout << setprecision(2) << fixed << endl;
+    cout << setw(20) << "Current Balance:\t$" << setw(6) << balance << endl;
+    cout << setw(20) << "Deposit Amount:\t$" << setw(6)<< deposit << endl;
+    cout << setw(20) << "Withdrawl Amount:\t$" << setw(6) << withdrawl << endl;
+    cout << setw(20) << "New Balance:\t$" << setw(6) << finalBalance << endl;
 
+    return 0;
 }
