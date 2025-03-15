@@ -7,6 +7,8 @@ Isaiah McNeill
 
 #include <iostream>
 #include <iomanip>
+#include <cmath>
+#include <ctime>
 using namespace std;
 
 //questions as functions
@@ -22,7 +24,9 @@ int main()
 
     do
     {
+        cout << "------------------------------------------\n";
         cout << "Which question would you like to view? Enter 1, 2, 3, or 4:\n";
+        cout << "------------------------------------------\n";
         cin >> choice;
 
         if (choice == 1)
@@ -50,7 +54,9 @@ int main()
             cout << "Invalid question choice. Try again\n";
         }
 
+        cout << "------------------------------------------\n";
         cout << "Would you like to run the ENTIRE program again? Enter 'y' or 'n':\n";
+        cout << "------------------------------------------\n";
         cin >> start_over;
     } 
     while (start_over == 'y');
@@ -83,7 +89,9 @@ void question1()
             cout << "Huh? I...I don't understand..?\n";
         }
 
+        cout << "------------------------------------------\n";
         cout << "Would you like to rerun Queston 1? Enter 'y' or 'n':\n";
+        cout << "------------------------------------------\n";
         cin >> choice;
     }
     while(choice == 'y');
@@ -109,7 +117,7 @@ int question2()
 
         if(food_price > 0)
         {
-
+            cout << "------------------------------------------\n";
             cout << "Will you be dining in or to go?\nEnter 1 if your dining in and 2 if you're ordering to go:\n";
             cin >> dining_option;
 
@@ -145,6 +153,7 @@ int question2()
         }
 
         cout << "Would you like to rerun Queston 2? Enter 'y' or 'n':\n";
+        cout << "------------------------------------------\n";
         cin >> choice;
             
     }
@@ -162,14 +171,14 @@ void question3()
 
     do
     {
-        cout << "Welcome to choose to my game! If you would like to play type 'y or 'n':\n";
+        cout << "Welcome to choose your own adventure! If you would like to play type 'y or 'n':\n";
         cin >> play;
 
         if(play == 'y')
         {
             cout << "Great! Here we go:\n";
             cout << "------------------------------------------\n";
-            cout << "You and you're friends, being curious and defiant teens, decide to go investigate a haunted house...\n";
+            cout << "You and your friends, being curious and defiant teens, decide to go investigate a haunted house...\n";
             cout << "Having second thoughts, you tell your two friends accompanying you that everyone should go back home.\n";
             cout << "Do you listen to your gut, or do you let curiosity get the better of you?\n";
             cout << "------------------------------------------\n";
@@ -183,21 +192,35 @@ void question3()
                     cout << "You know you're pretty smart!\n";
                     cout << "Your friends don't want to chicken out, so they go on without you...\n";
                     cout << "Now alone...you decide to leave...\n";
-                    cout << "Right when you reach the courtyard, you hear the screams of your friends and you see hands start to emerge from the ground behind you!\n";
+                    cout << "When you reach the courtyard, you hear the screams of your friends and you see hands start to emerge from the ground behind you!\n";
                     cout << "You  start to run but the path is split in two...\n";
                     cout << "Do you run into the graveyard or do you run to the tall black gate parallel to the graveyard?\n";
                     cout << "------------------------------------------\n";
 
-                    cout << "Enter 1 to enter the graveyard and 2 to run to the gate:\n";
+                    cout << "Enter 1 to go into the graveyard or 2 to run to the gate:\n";
                     cin >> game_choice2;
 
                         if(game_choice2 == 1)
                         {
-
+                            cout << "------------------------------------------\n";
+                            cout << "You bolt through the graveyard, swelling with fear...but it isn't enough to slow you down...\n";
+                            cout << "As you run, avoiding grimey and murderous palms and fingers, you see a short fence that leads behind the haunted house...\n";
+                            cout << "You lunge over the fence, slashing your arm on the way over...\n";
+                            cout << "All becomes silent as you stand up and run down the hill...\n";
+                            cout << "You run down the street...with your life, a nasty laceration, and an even nastier tale...\n";
+                            cout << "------------------------------------------\n";
+                            cout << "Congratulations! You win!\n";
                         }
                         else if(game_choice2 == 2)
                         {
-
+                            cout << "------------------------------------------\n";
+                            cout << "You decide to run with all the energy you can muster...\n";
+                            cout << "You reach the gate, but it turns out to be locked shut.\n";
+                            cout << "After trying to desperately climb it, you realize you're not going anywhere...\n";
+                            cout << "The hands that are continuously emerging from the ground snag your ankle, and yank you beneath the dense earth...\n";
+                            cout << "------------------------------------------\n";
+                            cout << "You lose! Better luck next time!\n";
+                            
                         }
                         else
                         {
@@ -213,7 +236,7 @@ void question3()
                     cout << "You and your friends immediately start panicking...but it's too late...\n";
                     cout << "The floor starts to creakily and eerily split open, ravenously consuming you and your friends...\n";
                     cout << "------------------------------------------\n";
-                    cout << "You lost! Better luck next time!\n";
+                    cout << "You lose! Better luck next time!\n";
                 }
                 else
                 {
@@ -230,7 +253,9 @@ void question3()
             cout << "Soooo you must've fat fingered it cause I clearly said 'y' and 'n'...\n";
         }
         
+        cout << "------------------------------------------\n";
         cout << "Would you like to rerun Queston 3? Enter 'y' or 'n':\n";
+        cout << "------------------------------------------\n";
         cin >> choice;
     } 
     while (choice == 'y');
@@ -239,5 +264,34 @@ void question3()
 
 void question4()
 {
+    int first_num, second_num, user_input;
+    int total = 0;
+    char choice;
+
+    srand(time(0));
+
+    first_num = rand() % 9 + 1;
+    second_num = rand() % 9 + 1;
+    total = first_num + second_num;
+
+    cout << "What is " << first_num << " + " << second_num << "?" << endl;
+    cin >> user_input;
+    if (user_input == total)
+    {
+        cout << "Correct!\n";
+    }
+    else 
+    {
+        cout << "Incorrect.\n";
+    }
+
+    cout << "------------------------------------------\n";
+    cout << "Would you like to rerun Queston 4? Enter 'y' or 'n':\n";
+    cin >> choice;
+
+    if (choice == 'y')
+    {
+        question4();
+    }
 
 }
