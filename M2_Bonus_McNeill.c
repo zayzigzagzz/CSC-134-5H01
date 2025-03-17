@@ -29,6 +29,9 @@ int main(void)
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;
     const int screenHeight = 600;
+    int tile_width = 80;
+    int tile_height = 60;
+    Color color1 = LIME;
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic screen manager");
 
@@ -134,7 +137,15 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-            ClearBackground(RAYWHITE);
+            ClearBackground(DARKGREEN);
+            
+            DrawRectangle(0, 0, tile_width, tile_height, color1);
+            int y = 0;
+            for(int x = 0; x < screenWidth; x += 2*tile_width)
+            {
+                DrawRectangle(x, y, tile_width, tile_height, color1);
+                DrawRectangle(x + tile_width, y, tile_width, tile_height, color1);
+            }
 
             switch(currentScreen)
             {
@@ -161,22 +172,14 @@ int main(void)
                     for (int x = 0; x < screenWidth; x += tileSize)
                     {
                         if ((x / tileSize + y / tileSize) % 2 == 0)
-                            DrawRectangle(x, y, tileSize, tileSize, DARKBLUE);
+                            DrawRectangle(x, y, tileSize, tileSize, DARKGREEN);
                         else
-                            DrawRectangle(x, y, tileSize, tileSize, BLUE);
+                            DrawRectangle(x, y, tileSize, tileSize, LIME);
                     }
                 }
                 
-                // Draw the coconut
-                DrawCircle(screenWidth / 2, screenHeight / 2, 100, BROWN); // Coconut body
-                DrawCircle(screenWidth / 2, screenHeight / 2, 90, DARKBROWN); // Inner part of the coconut
-                DrawCircle(screenWidth / 2 - 30, screenHeight / 2 - 30, 10, BLACK); // Coconut eye 1
-                DrawCircle(screenWidth / 2, screenHeight / 2 - 40, 10, BLACK); // Coconut eye 2
-                DrawCircle(screenWidth / 2 + 30, screenHeight / 2 - 30, 10, BLACK); // Coconut eye 3
-                
-                    
                     // TODO: Draw GAMEPLAY screen here!
-                    DrawText("SNAKE GAMEPLAY SCREEN", 20, 20, 40, LIME);
+                    DrawText("SNAKE GAMEPLAY SCREEN", 20, 20, 40, BLACK);
                       
                     DrawText("PRESS ENTER or TAP to JUMP to ENDING SCREEN", 130, 220, 20, LIME);
              
