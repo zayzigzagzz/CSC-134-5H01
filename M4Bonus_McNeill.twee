@@ -1,0 +1,200 @@
+:: StoryTitle
+Wizards of Regalia
+
+
+:: StoryData
+{
+  "ifid": "F55CA312-23C1-48D6-8CAC-3A12305FC1B1",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "zoom": 1
+}
+
+
+:: Blue {"position":"350,425","size":"100,100"}
+\:: Blue
+A strange tingle spreads through your body as the liquid flows down your throat. The room shimmers, and for a moment, you see everything in **brilliant detail**—every shadow, every particle of dust.  
+
+Then, suddenly, **your hands begin to fade**. The fairy claps her hands in delight.  
+
+*"Ah! A rare transformation! You are no longer bound to your human form."*  
+
+You look at yourself in the mirror. **Your body has become pure energy, shifting between solid and mist.**  
+
+- [[Try to regain your form|Struggle]]  
+- [[Accept your new existence|Power]]  
+
+
+:: Curse {"position":"925,725","size":"100,100"}
+\:: Curse
+You spit out the potion.  
+
+*"I see... a wise one,"* the fairy muses. *"But wisdom does not mean safety."*  
+
+The luck you were given now turns against you. **Everything you touch begins to decay.** Your fortune fades into **ruin.**  
+
+The fairy simply watches as your world **crumbles**.  
+
+- [[Play Again|Start]]  
+- [[Accept Your Fate|End]]  
+
+
+
+:: End {"position":"450,775","size":"100,100"}
+YOU DIED LOLLLLLLLLLLLLLLL
+THE END
+
+
+:: Escape {"position":"1000,450","size":"100,100"}
+\:: Escape
+You run. The walls shift, stretching into a never-ending corridor.  
+
+No matter how fast you go, the fairy is always **behind you**. Her laughter rings in your ears.  
+
+You will never escape. **This is your punishment.**  
+
+- [[Play Again|Start]]  
+- [[Accept the Nightmare|End]]  
+
+
+
+:: Fight {"position":"1175,500","size":"100,100"}
+\:: Fight
+You clench your fists. *"No."*  
+
+The fairy halts. Her grin fades.  
+
+*"No?"* she repeats.  
+
+With all your will, you **stare into her void-like eyes**.  
+
+The room **cracks like glass.** The world trembles. **And then... silence.**  
+
+The fairy vanishes. The night returns to normal.  
+
+Perhaps... you have broken the cycle.  
+
+- [[Play Again|Start]]  
+- [[Walk Away|End]]  
+
+
+
+:: Green {"position":"825,425","size":"100,100"}
+\:: Green
+As soon as the thick, cloudy liquid touches your lips, warmth floods your body. The fairy gasps. *"Oh my! You’re lucky indeed!"*  
+
+A surge of **golden energy** surrounds you. Visions of **wealth, power, and endless fortune** fill your mind.  
+
+*"The elixir has chosen you!"* the fairy proclaims. **You are blessed with untold riches and luck.**  
+
+But as you revel in your newfound gift... the fairy smirks.  
+
+*"Ah... but did I mention? The potion must be taken **every full moon**... or the luck turns to **misfortune.**"*  
+
+- [[Accept the Risk|Riches]]  
+- [[Refuse the Fairy's Trick|Curse]]  
+
+
+
+:: NoPotion {"position":"1025,225","size":"100,100"}
+\:: NoPotion
+You shake your head.  
+
+*"You refuse my gift?"* the fairy whispers. Her wings twitch. Her eyes darken.  
+
+The air grows cold. The walls twist and bend. The fairy **mutates**, her tiny frame stretching into something monstrous.  
+
+*"You are ungrateful."* Her voice is no longer soft—it **echoes like a thousand whispers at once**.  
+
+A dozen **clawed hands** reach from the shadows...  
+
+- [[Run!|Escape]]  
+- [[Stand Your Ground|Fight]]  
+
+
+
+:: Power {"position":"1025,625","size":"100,100"}
+\:: Power
+Instead of fighting it, you embrace the change. Your mind expands, stretching beyond the limits of mortality. You **see through time**, feel the heartbeat of the universe itself.  
+
+The fairy bows. *"You are no longer just a human. You have become something greater."*  
+
+You rise into the stars, leaving your old life behind. **You have ascended.**  
+
+- [[Play Again|Start]]  
+- [[Begin a New Existence|End]]  
+
+
+
+:: Red {"position":"200,475","size":"100,100"}
+### **Red Potion (Bad Ending - Fiery Doom)**  
+\:: Red
+The moment the liquid touches your tongue, an unbearable heat spreads through your veins. It burns like wildfire, searing every nerve.  
+
+Your vision distorts as the fairy watches with an amused grin. Your hands tremble. Your skin begins to **crack** like molten rock.   
+
+*"Oh dear..."* the fairy giggles, tilting her head, *"Perhaps too much energy for a mortal body?"*  
+
+With a final gasp, you collapse into a heap of smoldering embers. **You were consumed by the potion’s power.**  
+
+- [[Play Again|Start]]  
+- [[Accept Your Fate|End]]  
+
+
+:: Riches {"position":"700,575","size":"100,100"}
+\:: Riches
+You smile. A small price to pay for **eternal prosperity**.  
+
+Gold coins rain from thin air. Every gamble, every venture you take leads to **success**.  
+
+But in the back of your mind, you know the day will come when you forget... or run out of the elixir. **What happens then?**  
+
+- [[Play Again|Start]]  
+- [[Enjoy Your Fortune While It Lasts|End]]  
+
+
+
+:: Start {"position":"200,225","size":"100,100"}
+\:: Start
+You wake up to the soft sound of fluttering wings. A small, radiant fairy hovers in the dim glow of the moonlight, her iridescent wings shimmering like glass.  
+
+*"Mortal,"* she whispers, her voice like a chime in the wind. *"I offer you a gift... or a curse, depending on your choice."*  
+
+On a silver tray, she presents **three potions**, each pulsing with an unnatural glow.  
+
+- **[[Red Potion|Red]]** -:: Fight
+You clench your fists. *"No."*  
+
+The fairy halts. Her grin fades.  
+
+*"No?"* she repeats.  
+
+With all your will, you **stare into her void-like eyes**.  
+
+The room **cracks like glass.** The world trembles. **And then... silence.**  
+
+The fairy vanishes. The night returns to normal.  
+
+Perhaps... you have broken the cycle.  
+
+- [[Play Again|Start]]  
+- [[Walk Away|End]]  
+
+- **[[Blue Potion|Blue]]** - A shimmering, midnight blue potion, coursing with dark purple lightning.  
+- **[[Ominous Green Potion|Green]]** - A cloudy elixir that releases a faint skull-shaped vapor.  
+- **[[Refuse the Fairy's Gift|NoPotion]]**  
+
+---
+
+
+:: Struggle {"position":"550,600","size":"100,100"}
+\:: Struggle
+You try to hold onto something, anything—your memories, your name—but they slip through your fingers like smoke.  
+
+The fairy frowns. *"Oh, how unfortunate. You were not ready..."*  
+
+With one final breath, you **fade into nothingness**, lost in the void between realities.  
+
+- [[Play Again|Start]]  
+- [[Let Go|End]]
