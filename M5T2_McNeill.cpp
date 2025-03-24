@@ -30,7 +30,7 @@ int find_squares(int number)
 
 void print_line(int number, int square)
 {
-    cout << number << " \t" << square << endl; 
+    cout << number << "\t" << square << endl; 
     //will look like:
     // 3 9 
     // 4 16
