@@ -6,6 +6,7 @@ M5HW1 - Gold
 */
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 using namespace std;
 
 void question1();
@@ -15,7 +16,9 @@ void question2();
 void question3();
 
 void question4();
-
+double calcCircle(double radius);
+double calcRectangle(double length, double width);
+double calcTriangle(double base, double height);
 
 void question5();
 
@@ -31,37 +34,43 @@ int main()
 
         if(choice == 1)
         {
-            cout << "Question 1\n------------------------------\n";
+            cout << "Question 1\n";
+            cout << "---------------------------------------\n";
             question1();
         }
         
         else if(choice == 2)
         {
-            cout << "Question 2\n------------------------------\n";
+            cout << "Question 2\n";
+            cout << "---------------------------------------\n";
             question2();
         }
 
         else if(choice == 3)
         {
-            cout << "Question 3\n------------------------------\n";
+            cout << "Question 3\n";
+            cout << "---------------------------------------\n";
             question3();
         }
 
         else if(choice == 4)
         {
-            cout << "Question 4\n------------------------------\n";
+            cout << "Question 4\n";
+            cout << "---------------------------------------\n";
             question4();
         }
 
         else if(choice == 5)
         {
-            cout << "Question 5\n------------------------------\n";
+            cout << "Question 5\n";
+            cout << "---------------------------------------\n";
+            question5();
         }
 
     }
     while(choice != 0);  
 
-    cout << "----------------------\n";
+    cout << "---------------------------------------\n";
     cout << "Program terminated!\n";
     
     return 0;
@@ -125,7 +134,7 @@ void question2()
     if(!zero_or_less)
     {
         cout << "A side cannot equal 0 or less! Try again!\n";
-        cout << "---------------------------------\n";
+        cout << "---------------------------------------\n";
         question2();
     }
 
@@ -182,7 +191,7 @@ void question3()
         
         default:
             cout << "You must enter a number between 1 and 10! Try again!\n";
-            cout << "------------------------------------------\n";
+            cout << "---------------------------------------\n";
             question3();
     } 
 
@@ -192,35 +201,120 @@ void question4()
 {
     int choice;
     double length, width, height, base, radius;
+    bool running = true;
 
-    cout << "Geometry Calculator\n1.Calculate the Area of a Circle\n2. Calculate the Area of a Rectangle\n3. Calculate the Area of a Triangle\n4. Quit\n";
-    cout << "Enter your choice (1 - 4):\n";
-    cin >> choice;
-
-    do
+    while(running)
     {
+        cout << "---------------------------------------\n";
+        cout << "Geometry Calculator\n1. Calculate the Area of a Circle\n2. Calculate the Area of a Rectangle\n3. Calculate the Area of a Triangle\n4. Quit\n";
+        cout << "Enter your choice (1 - 4):\n";
+        cin >> choice;
+        if(choice == 4)
+        {
+            running = false;
+        }
+
+        if(choice <= 0 || choice > 4)
+        {
+            cout << "Must be a number (1 - 4)! Try again!\n";
+            cout << "---------------------------------------\n";
+            question4();
+        }
+
         if(choice == 1)
         {
             cout << "Enter the circle's radius:\n";
             cin >> radius;
+            if(radius >= 0)
+            {
+                cout << "The area is " << calcCircle(radius) << endl;
+            }
+            else
+            {
+                cout << "Radius can't be less than 0. Try again!\n";
+                cout << "---------------------------------------\n";
+                question4();
+            }
         }
-
-        if(choice == 2)
+        else if(choice == 2)
         {
             cout << "Enter the rectangle's length:\n";
             cin >> length;
             cout << "Enter the rectangle's width:\n";
             cin >> width;
+            if(length >= 0 && width >= 0)
+            {
+                cout << "The area is " << calcRectangle(length, width) << endl;
+            }
+            else
+            {
+                cout << "The length and/or width can't be less than 0! Try again\n";
+                cout << "---------------------------------------\n";
+                question4();
+            }
         }
 
-        if(choice == 3)
+        else if(choice == 3)
         {
             cout << "Enter the triangle's base:\n";
             cin >> base;
             cout << "Enter the triangle's height:\n";
             cin >> height;
+            if(base >= 0 && height >= 0)
+            {
+                cout << "The area is " << calcTriangle(base, height) << endl;
+            }
+            else
+            {
+                cout << "The base and/or height can't be less than 0! Try again\n";
+                cout << "---------------------------------------\n";
+                question4();
+            }
+        }
+        
+    }
+
+}
+
+double calcCircle(double radius)
+{
+    const double PI = 3.14159;
+    return pow(radius, 2) * PI; 
+}
+
+double calcRectangle(double length, double width)
+{
+    return length * width;
+}
+
+double calcTriangle(double base, double height)
+{
+    return base * height * 0.5;
+}
+
+void question5()
+{
+    int speed, time;
+
+    cout << "What is the speed of the vehicle in MPH? ";
+    cin >> speed;
+    cout << "How many hours has the vehicle traveled? ";
+    cin >> time;
+
+    cout << "Hour\tDistance Traveled\n";
+    cout << "---------------------------------------\n";
+
+    if(speed >= 0 && time >= 1)
+    {
+        for(int i = 1; i <= time; i++)
+        {
+            cout << setw(2) << i << setw(15) << speed * i << endl;
         }
     }
-    while(choice != 4);
-
+    else 
+    {
+        cout << "Speed must be 0 or greater and Time must be 1 or greater! Try again!\n";
+        cout << "---------------------------------------\n";
+        question5();
+    }
 }
