@@ -24,13 +24,29 @@ void question5();
 
 int main()
 {
-    int choice = 1;
+    int choice;
+    bool valid_input = true;
 
     do
     {
         cout << "---------------------------------------\n";
         cout << "Choose a question numbered 1 - 5 or type 0 to quit:\n";
         cin >> choice;
+
+        if(choice < 0 || choice >= 6)
+        {
+            valid_input = false;
+            while(!valid_input)
+            {
+                cout << "You must enter a number (0 - 5)! Try again!\n";
+                cout << "---------------------------------------\n";
+                cin >> choice;
+                if(choice >= 0 && choice <= 5)
+                {
+                    valid_input = true;
+                }
+            }
+        }
 
         if(choice == 1)
         {
